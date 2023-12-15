@@ -16,7 +16,9 @@
     flex:1;
     background-color: white;
 }
-.postContainer{
+.posterContainer{
+    margin: 2%;
+    border-radius:12px;
     display: flex;
     align-items: center;
     background-color: var(--ColorC);
@@ -40,6 +42,7 @@
     align-items: flex-end;
     padding-right:4%;
     justify-content: right;
+    cursor: pointer;
 }
 a:active{
     font-weight: bold;

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './componentStyle.css'
-const PostInput = () => {
+const Poster = () => {
   const [inputValue, setInputValue] = useState('');
   const [account] = useState(null);
 
@@ -12,7 +12,7 @@ const PostInput = () => {
   };
 
   return (
-    <div className="postContainer">
+    <div className="posterContainer">
       <label className= 'label' >
         Prompt something: </label>
         <input
@@ -27,4 +27,4 @@ const PostInput = () => {
   );
 };
 
-export default PostInput;
+export default Poster;

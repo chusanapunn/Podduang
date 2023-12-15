@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
-import './componentStyle.css'
-const Poster = ({account}) => {
+import './componentStyle.css';
+
+
+const Poster = ({account,contract}) => {
   const [inputValue, setInputValue] = useState('');
-  const [posterAccount] = useState(account);
+  // const [posterAccount] = useState(account);
 
   const handleSubmit = () => {
     // Implement your logic here
     
     console.log('Submitted value:', inputValue,'. By Account: ',account);
     // You can call your contract function or perform other actions
-    
+    const post = contract.createPost(inputValue);
+    console.log("Check post", post);
   };
 
   return (

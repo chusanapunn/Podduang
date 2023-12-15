@@ -4,17 +4,25 @@ import './App.css';
 import Poster from './component/Poster.js';
 import ConnectMetaMaskButton from './component/ConnectMetaMaskButton.js';
 
+
+
 function App() {
 
   const [account, setAccount] = useState(null);
+  const [contract,setContract] = useState(null);
 
   const updateAccount = (newAccount) => {
     setAccount(newAccount);
   };
   
+  const updateContract = (newContract)=>{
+    setContract(newContract);
+  }
+
   useEffect(() => {
     console.log("Account is: ", account);
-    }, [account]);
+    console.log("Contract is: ", contract);
+    }, [account,contract]);
 
   // const handleSubmit = () => {
   //   // Implement your logic here
@@ -29,13 +37,13 @@ function App() {
             </h1>
             <ul className="tab">
                 <li className="tabLink">trending</li>
-                <ConnectMetaMaskButton onUpdateAccount={updateAccount}/>
+                <ConnectMetaMaskButton onUpdateAccount={(updateAccount)} onUpdateContract={(updateContract)}/>
                 <li className="tabLink">news</li>
             </ul>
 
       </div>
     <div>
-      <Poster account={account}></Poster>
+      <Poster account={account} contract={contract}></Poster>
     </div>
     </div>
   );

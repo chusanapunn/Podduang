@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
-import React, { useState } from'react';
+import React, { useState,useEffect } from'react';
 import './App.css';
-import PostInput from './component/Poster.js';
+import Poster from './component/Poster.js';
 import ConnectMetaMaskButton from './component/ConnectMetaMaskButton.js';
 
 function App() {
@@ -11,6 +11,11 @@ function App() {
   const updateAccount = (newAccount) => {
     setAccount(newAccount);
   };
+  
+  useEffect(() => {
+    console.log("Account is: ", account);
+    }, [account]);
+
   // const handleSubmit = () => {
   //   // Implement your logic here
   // console.log('Account: ',account);
@@ -27,12 +32,10 @@ function App() {
                 <ConnectMetaMaskButton onUpdateAccount={updateAccount}/>
                 <li className="tabLink">news</li>
             </ul>
-        
 
-        <button className='button' onClick={()=>console.log("Account is: ",account)}>Done</button>
       </div>
     <div>
-      <PostInput ></PostInput>
+      <Poster account={account}></Poster>
     </div>
     </div>
   );

@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
 import './componentStyle.css'
-const Poster = () => {
+const Poster = ({account}) => {
   const [inputValue, setInputValue] = useState('');
-  const [account] = useState(null);
+  const [posterAccount] = useState(account);
 
   const handleSubmit = () => {
     // Implement your logic here
+    
     console.log('Submitted value:', inputValue,'. By Account: ',account);
     // You can call your contract function or perform other actions
-
+    
   };
 
   return (
     <div className="posterContainer">
       <label className= 'label' >
-        Prompt something: </label>
+        Distribute your thoughts : </label>
         <input
             className='input'
             type="text"
@@ -22,7 +23,7 @@ const Poster = () => {
             onChange={(e) => setInputValue(e.target.value)}
         />
       
-      <button className='button' onClick={handleSubmit}>Done</button>
+      <button className='button' onClick={handleSubmit}>Post</button>
     </div>
   );
 };

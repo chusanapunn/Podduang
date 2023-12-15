@@ -40,11 +40,14 @@
     padding-right:4%;
 }
 .tabLink{
-    padding:2%;
+    padding-right:12px;
     font-weight: 100;
     font-size: 24;
+    overflow:hidden;
     white-space: nowrap;
+    text-overflow: ellipsis;
 }
+
 .input {
     padding: 2%;
     margin: 2%;

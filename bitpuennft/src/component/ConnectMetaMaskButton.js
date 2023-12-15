@@ -34,7 +34,7 @@ function ConnectMetaMaskButton() {
       <ul className="tab">
         <li className="tabLink">trending</li>
       {account ? (
-        <p className="label">connected account: {account}</p>
+        <div className="tabLink">connected account: {account}</div>
       ) : (
         
         <li className="tabLink" onClick={connectToMetaMask}>connect to MetaMask</li>

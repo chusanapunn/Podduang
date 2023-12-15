@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import './componentStyle.css'
 const PostInput = () => {
   const [inputValue, setInputValue] = useState('');
+  const [account] = useState(null);
 
   const handleSubmit = () => {
     // Implement your logic here
-    console.log('Submitted value:', inputValue);
+    console.log('Submitted value:', inputValue,'. By Account: ',account);
     // You can call your contract function or perform other actions
+
   };
 
   return (

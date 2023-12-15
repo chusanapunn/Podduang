@@ -1,15 +1,19 @@
-import React from 'react';
-import ConnectMetaMaskButton from './ConnectMetaMaskButton.js';
+import React  from 'react';
 import './componentStyle.css';
 
 function Header(){
+
     return(
         <div className='container'>
             <h1 className='title'> 
                 bitpuen
-                
             </h1>
-            <ConnectMetaMaskButton />
+            <ul className="tab">
+            
+                <li className="tabLink">trending</li>
+                
+                <li className="tabLink">news</li>
+            </ul>
         </div>
         
     )

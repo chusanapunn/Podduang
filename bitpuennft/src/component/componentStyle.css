@@ -31,21 +31,23 @@
     align-self: flex-start;
     color: black;
     font-weight: 100;
-    font-size: 32;
+    font-size: 48;
 }
 .tab{
     list-style-type: none;
     display:flex;
-    float:right;
+    flex-direction: row;
+    align-items: flex-end;
     padding-right:4%;
+    justify-content: right;
+}
+a:active{
+    font-weight: bold;
 }
 .tabLink{
     padding-right:12px;
     font-weight: 100;
     font-size: 24;
-    overflow:hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 .input {

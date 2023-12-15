@@ -15,13 +15,19 @@ async function main() {
   // const lock = await hre.ethers.deployContract("Lock", [unlockTime], {
   //   value: lockedAmount,
   // });
-  const BitPuenNFT = await hre.ethers.getContractFactory("BitPuenNFT");
-  const bitpuenNFT = await BitPuenNFT.deploy("Hello, Hardhat!");
+
+  const initialOwner = "0xC445156F072f1947eEcaCD116440dFB9d1F08C5F"; // Test Ganache account
+  
+  const BitpuenNFT = await hre.ethers.getContractFactory("BitpuenNFT");
+  const bitpuenNFT = await BitpuenNFT.deploy(initialOwner);
 
   // await bitpuenNFT.waitForDeployment();
-  await bitpuenNFT.deployed();
 
-  console.log("BitPuenNFT deployed to:", bitpuenNFT.address);
+  deployedBitPuenNFT = await bitpuenNFT.deployed();
+
+  //initialOwner
+
+  console.log("BitPuenNFT deployed to:", deployedBitPuenNFT.address);
   // console.log(
   //   `BitPuenNFT with ${ethers.formatEther(
   //     lockedAmount

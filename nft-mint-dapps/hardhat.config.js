@@ -16,6 +16,13 @@ module.exports = {
     localganache: {
       url: process.env.PROVIDER_URL,
       accounts: [process.env.PRIVATE_KEY]
+    },
+    sepolia:{
+      url: process.env.ALCHEMY_API_URL,
+      accounts: [process.env.PRIVATE_KEY]
     }
+  },
+  etherscan: {
+    apikey: process.env.ETHERSCAN_KEY,
   }
 };

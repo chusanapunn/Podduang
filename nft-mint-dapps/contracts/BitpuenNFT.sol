@@ -13,16 +13,21 @@ contract BitpuenNFT is ERC721, Ownable {
     uint256 public maxPerWallet;
     bool public isPublicMintEnabled;
     string internal baseTokenURI;
-    
+    address public _owner;
     address payable public withdrawWallet;
 
     mapping(address=> uint256) public walletMints;
-
-    constructor(address initialOwner) payable ERC721('BitpuenNFT','BPN'){
+// 
+    constructor(address initialOwner) payable 
+    ERC721('BitpuenNFT','BPN') 
+    Ownable(initialOwner)
+    {
+        _owner = initialOwner;
         mintPrice = 0.02 ether;
         totalSupply = 0;
         maxSupply = 1000;
         maxPerWallet = 3;
+        // initialOwner=msg.sender;
     }
     function setIsPublicMintEnabled(bool isPublicMintEnabled_) external onlyOwner{
         isPublicMintEnabled = isPublicMintEnabled_;
@@ -32,10 +37,10 @@ contract BitpuenNFT is ERC721, Ownable {
         baseTokenURI = baseTokenURI_;
     }
 
-    function tokenURI(uint256 tokenID_) public view override returns (string memory) {
-        require(_exists(tokenID_),"Nonexistent Token");
-        // return bytes(baseTokenURI).length > 0 ? string(abi.encodePacked(baseTokenURI,tokenID_.toString()));
-        return string(abi.encodePacked(baseTokenURI, Strings.toString(tokenID_),".json"));
+    function tokenURI(uint256 tokenId_) public view override returns (string memory) {
+        // require(_exists(tokenId_),"Nonexistent Token");
+        // return bytes(baseTokenURI).length > 0 ? string(abi.encodePacked(baseTokenURI,tokenId_.toString()));
+        return bytes(baseTokenURI).length > 0 ? string(abi.encodePacked(baseTokenURI, Strings.toString(tokenId_),".json")):"XD";
     }
 
     function withdraw() external onlyOwner {

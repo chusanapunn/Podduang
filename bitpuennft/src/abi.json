@@ -1,49 +1,5 @@
 [
 	{
-		"inputs": [
-			{
-				"internalType": "uint16",
-				"name": "NEW_POST_LENGTH",
-				"type": "uint16"
-			}
-		],
-		"name": "changePostLimit",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "string",
-				"name": "_post",
-				"type": "string"
-			}
-		],
-		"name": "createPost",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [
-			{
-				"internalType": "address",
-				"name": "author",
-				"type": "address"
-			},
-			{
-				"internalType": "uint256",
-				"name": "id",
-				"type": "uint256"
-			}
-		],
-		"name": "downVote",
-		"outputs": [],
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
 		"inputs": [],
 		"stateMutability": "nonpayable",
 		"type": "constructor"
@@ -142,6 +98,45 @@
 		"type": "event"
 	},
 	{
+		"inputs": [],
+		"name": "MAX_POST_LENGTH",
+		"outputs": [
+			{
+				"internalType": "uint16",
+				"name": "",
+				"type": "uint16"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint16",
+				"name": "NEW_POST_LENGTH",
+				"type": "uint16"
+			}
+		],
+		"name": "changePostLimit",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_post",
+				"type": "string"
+			}
+		],
+		"name": "createPost",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
 		"inputs": [
 			{
 				"internalType": "address",
@@ -154,7 +149,7 @@
 				"type": "uint256"
 			}
 		],
-		"name": "upVote",
+		"name": "downVote",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -196,7 +191,7 @@
 						"type": "address[]"
 					}
 				],
-				"internalType": "struct chatContract.Post[]",
+				"internalType": "struct bitPuenContract.Post[]",
 				"name": "",
 				"type": "tuple[]"
 			}
@@ -247,22 +242,9 @@
 						"type": "address[]"
 					}
 				],
-				"internalType": "struct chatContract.Post",
+				"internalType": "struct bitPuenContract.Post",
 				"name": "",
 				"type": "tuple"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "MAX_POST_LENGTH",
-		"outputs": [
-			{
-				"internalType": "uint16",
-				"name": "",
-				"type": "uint16"
 			}
 		],
 		"stateMutability": "view",
@@ -323,6 +305,24 @@
 			}
 		],
 		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "author",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "id",
+				"type": "uint256"
+			}
+		],
+		"name": "upVote",
+		"outputs": [],
+		"stateMutability": "nonpayable",
 		"type": "function"
 	}
 ]

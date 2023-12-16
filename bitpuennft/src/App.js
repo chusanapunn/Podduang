@@ -3,8 +3,7 @@ import React, { useState,useEffect } from'react';
 import './App.css';
 import Poster from './component/Poster.js';
 import ConnectMetaMaskButton from './component/ConnectMetaMaskButton.js';
-
-
+import PostDisplayer from './component/PostDisplayer.js';
 
 function App() {
 
@@ -45,6 +44,7 @@ function App() {
     <div>
       <Poster account={account} contract={contract}></Poster>
     </div>
+    <PostDisplayer contract={contract}> </PostDisplayer>
     </div>
   );
 }

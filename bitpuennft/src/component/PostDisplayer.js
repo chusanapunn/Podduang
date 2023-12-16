@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect, useCallback} from 'react';
 import './componentStyle.css';
 import PostCard from './PostCard.js';
 
@@ -9,35 +9,35 @@ const PostDisplayer = ({contract}) => {
       const [postList, setPostList] = useState([]);
       const [showpost, setShowpost] = useState(false);
       
-      async function refreshPost(){
-        try{
-        if (contract){
-          const posts = await contract.getAllPost();
-
-        if (posts.length > 0) {
-          setShowpost(true);
-          setPostList(posts);
-          console.log('Posts:', posts);
-        } else {
-          setShowpost(false);
-          console.log('No Posts Yet');
+      const refreshPost = useCallback(async () => {
+        try {
+          if (contract) {
+            const posts = await contract.getAllPost();
+            if (posts.length > 0) {
+              setShowpost(true);
+              setPostList(posts);
+              console.log('Posts:', posts);
+            } else {
+              setShowpost(false);
+              console.log('No Posts Yet');
+            }
+          } else {
+            console.error('No Contract Yet');
+          }
+        } catch (error) {
+          console.error('Error refreshing posts:', error);
         }
-      } else {
-        console.error('No Contract Yet');
-      }
-    } catch (error) {
-      console.error('Error refreshing posts:', error);
-    }
-    }
+      }, [contract]);
 
     useEffect(()=>{
       refreshPost();
-    },[contract]);
+    },[contract,refreshPost]);
 
   return (
     <div className="PostDisplayerContainer">
       {showpost===true? (
-        <PostCard postList={postList}>XXX</PostCard>
+        postList.map((post)=>(
+        <PostCard post={post} contract={contract}></PostCard>))
         )
       :(
         <label className= 'label'>

@@ -4,7 +4,7 @@ import './componentStyle.css'
 // import { ethers } from 'ethers/providers';
 import contractABI from '../abi.json';
 
-const contractAddress = '0xE6fc140E2ea10fa26adEf23594011492b877d3FB';
+const contractAddress = '0xf4eA6b918362Ead80F04E9AAba163dEaCAA0c90c';
 const { ethers } = require("ethers");
 
 const ConnectMetaMaskButton = ({onUpdateAccount,onUpdateContract})=>{

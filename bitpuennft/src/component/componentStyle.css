@@ -1,58 +1,70 @@
 :root{
-    --ColorA: #DCEDFF;
-    --ColorB: #94B0DA;
-    --ColorC: #8F91A2;
-    --ColorD: #505A5B;
+    --ColorA: rgb(251, 253, 226);
+    --ColorB: #fae2a6;
+    --ColorC: #e5e6ee;
+    --ColorD: #4e5758;
     --ColorE: #343F3E;
 
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
+.header{
+    display:flex;
+    flex-direction: row;
     /* align-items: center; */
-    padding: 2%;
+    padding: 1%;
     flex:1;
     background-color: white;
     border-bottom: 1px solid;
 }
 .posterContainer{
-    margin: 2%;
+    margin: .5%;
     border-radius:12px;
     display: flex;
     align-items: center;
     background-color: var(--ColorC);
 }
 .PostDisplayerContainer{
-    display: grid;
+    display: flex;
 }
 .PostCardContainer{
-    padding:2%;
-    margin: 2%;
-    height: 30%;
-    width: 30%;
+    padding:1%;
+    margin: 1%;
     border-radius:12px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     background-color: var(--ColorC);
 }
 .label{
     color:  black;
     padding-left: 2%;
-    font-size: 12;
-    
+    font-size: 18px;
+    font-weight: 100;
+
+}
+.contentText{
+    color:  black;
+    padding-left: 2%;
+    font-size: 16x;
+    font-weight: 100;
 }
 .errText{
-    color: rgb(229, 0, 0);
+    color: rgb(255, 0, 0);
     padding-left: 2%;
-    font-size: 12;
+    font-weight: 100;
 }
 .title{
+    display:flex;
     align-self: flex-start;
     color: black;
     font-weight: 100;
-    font-size: 48;
+    font-size: 5vh;
 }
+.subtitle{
+    font-weight: 100;
+    font-size: 1.5vh;
+}
+
 .tab{
     list-style-type: none;
     display:flex;
@@ -62,9 +74,8 @@
     justify-content: right;
     cursor: pointer;
 }
-a:active{
-    font-weight: bold;
-}
+
+
 .tabLink{
     padding-right:12px;
     font-weight: 100;
@@ -78,7 +89,7 @@ a:active{
     border: 2px;
 }
 .button {
-    padding: 4%;
+    padding: 2%;
     margin:2%;
     background-color: var(--ColorB);
     color: black;
@@ -87,4 +98,22 @@ a:active{
     cursor: pointer;
     font-weight:100;
     float:right;
+    font-size: 12px;
+}
+.button:hover{
+    background-color:var(--ColorD);
+}
+
+
+.postInfo{
+    background-color: var(--ColorD);
+    border-radius: 12px;
+    margin:2%;
+    padding:2%;
+}
+
+.voteDisplay{
+    color:white;
+    padding: 2%;
+    
 }

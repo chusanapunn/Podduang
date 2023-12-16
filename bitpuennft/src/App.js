@@ -30,14 +30,16 @@ function App() {
 
   return (
     <div>
-      <div className='container'>
+      <div className='header'>
       <h1 className='title'> 
-                bitpuen
+                bitpuen :P 
+            
             </h1>
+            <h2 className='subtitle'>campaign & Advertisement</h2>
             <ul className="tab">
-                <li className="tabLink">trending</li>
+                <li className="tabLink" style={{fontWeight:"400"}}>trending</li>
                 <ConnectMetaMaskButton onUpdateAccount={(updateAccount)} onUpdateContract={(updateContract)}/>
-                <li className="tabLink">news</li>
+                {/* <li className="tabLink">news</li> */}
             </ul>
 
       </div>

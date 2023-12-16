@@ -12,14 +12,14 @@ const Poster = ({account,contract}) => {
     
     console.log('Submitted value:', inputValue,'. By Account: ',account);
     // You can call your contract function or perform other actions
-    const post = await contract.createPost(inputValue);
+    const post = await contract.createPost(inputValue,{gasLimit:150000});
     console.log("Check post :", post);
   };
 
   return (
     <div className="posterContainer">
     <label className= 'label' >
-      Distribute your thoughts : 
+      Post your Advertisement : 
     </label><input
             className='input'
             type="text"

@@ -47,21 +47,22 @@ const PostCard = ({post,contract}) => {
   return (
     <div className="PostCardContainer">
         <label className="contentText">
-          {post.content}
-          
-          
-          </label>  
-        <div className='postInfo'>
-          <button className='button' onClick={upVote}> UP Vote </button> 
-          <label className="voteDisplay">{vote!==0
-          ?(vote)
-          :
-          (0)}
-          </label>
-          <button className='button' onClick={downVote}> DOWN Vote</button>  
-          </div>
-          
+          {post.content} 
+          {post.imageLink &&(
+        <img src={post.imageLink} alt="" className="postImage" />
+      )}<div className='postInfo'>
+      <button className='button' onClick={downVote}> - Vote</button>  
+      
+      <label className='voteLabel'>
+      {vote!==0
+    ?(vote)
+    :
+    (0)}
+      </label>
+      <button className='button' onClick={upVote}> + Vote </button> 
     </div>
+  </label>        
+  </div>
   );
 };
 

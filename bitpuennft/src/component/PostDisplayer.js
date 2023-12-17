@@ -8,13 +8,15 @@ const PostDisplayer = ({contract}) => {
     // You can call your contract function or perform other actions
       const [postList, setPostList] = useState([]);
       const [showpost, setShowpost] = useState(false);
-      
+
       const refreshPost = useCallback(async () => {
         try {
           if (contract) {
             const posts = await contract.getAllPost();
             if (posts.length > 0) {
+
               setShowpost(true);
+              
               setPostList(posts);
               console.log('Posts:', posts);
             } else {
@@ -35,6 +37,9 @@ const PostDisplayer = ({contract}) => {
 
   return (
     <div className="PostDisplayerContainer">
+      <button className='button' onClick={refreshPost}> 
+        refresh 
+      </button>
       {showpost===true? (
         postList.map((post)=>(
         <PostCard post={post} contract={contract}></PostCard>))
@@ -44,9 +49,7 @@ const PostDisplayer = ({contract}) => {
           No post here
         </label>
         )}
-      <button className='button' onClick={refreshPost}> 
-        refresh 
-      </button>
+      
     </div>
   );
 };

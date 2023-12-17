@@ -9,6 +9,7 @@ function App() {
 
   const [account, setAccount] = useState(null);
   const [contract,setContract] = useState(null);
+  const [sortBy, setSortBy] = useState('vote');
 
   const updateAccount = (newAccount) => {
     setAccount(newAccount);
@@ -20,7 +21,7 @@ function App() {
 
   useEffect(() => {
     console.log("Account is: ", account);
-    console.log("Contract is: ", contract);
+    // console.log("Contract is: ", contract);
     }, [account,contract]);
 
   // const handleSubmit = () => {
@@ -35,9 +36,14 @@ function App() {
                 bitpuen :P 
             
             </h1>
-            <h2 className='subtitle'>campaign & Advertisement</h2>
+            <h2 className='subtitle'>campaign & advertisement</h2>
             <ul className="tab">
-                <li className="tabLink" style={{fontWeight:"400"}}>trending</li>
+          <li className="tabLink" onClick={() => setSortBy('vote')}>
+            Trending
+          </li>
+          <li className="tabLink" onClick={() => setSortBy('timestamp')}>
+            News
+          </li>
                 <ConnectMetaMaskButton onUpdateAccount={(updateAccount)} onUpdateContract={(updateContract)}/>
                 {/* <li className="tabLink">news</li> */}
             </ul>
@@ -46,7 +52,7 @@ function App() {
     <div>
       <Poster account={account} contract={contract}></Poster>
     </div>
-    <PostDisplayer contract={contract}> </PostDisplayer>
+    <PostDisplayer contract={contract}account={account} sortBy={sortBy}> </PostDisplayer>
     </div>
   );
 }

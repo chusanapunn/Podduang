@@ -4,7 +4,7 @@ import './componentStyle.css'
 // import { ethers } from 'ethers/providers';
 import contractABI from '../abi.json';
 
-const contractAddress = '0xf4eA6b918362Ead80F04E9AAba163dEaCAA0c90c';
+const contractAddress = '0xe7ceD56A3B8DA1bFF539a8abdbB2C40907d24388';
 const { ethers } = require("ethers");
 
 const ConnectMetaMaskButton = ({onUpdateAccount,onUpdateContract})=>{
@@ -20,8 +20,7 @@ const ConnectMetaMaskButton = ({onUpdateAccount,onUpdateContract})=>{
 
 
           const contractConnector = new ethers.Contract(contractAddress, contractABI, provider.getSigner());
-          
-          
+
           console.log(accounts);
           // Set the connected account
           setAccount(accounts[0]);
@@ -31,6 +30,7 @@ const ConnectMetaMaskButton = ({onUpdateAccount,onUpdateContract})=>{
           onUpdateContract(contractConnector);
 
           // Other logic after connecting...
+          console.log('contract is: ',contract);
         } else {
           console.error('MetaMask not detected. Please install MetaMask.');
         }

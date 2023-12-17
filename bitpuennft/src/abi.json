@@ -98,6 +98,19 @@
 		"type": "event"
 	},
 	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "user",
+				"type": "address"
+			}
+		],
+		"name": "userConnected",
+		"type": "event"
+	},
+	{
 		"inputs": [],
 		"name": "MAX_POST_LENGTH",
 		"outputs": [
@@ -105,6 +118,25 @@
 				"internalType": "uint16",
 				"name": "",
 				"type": "uint16"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "allUsers",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
 			}
 		],
 		"stateMutability": "view",
@@ -129,6 +161,16 @@
 				"internalType": "string",
 				"name": "_post",
 				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_imageLink",
+				"type": "string"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_timestamp",
+				"type": "uint256"
 			}
 		],
 		"name": "createPost",
@@ -176,6 +218,11 @@
 						"type": "string"
 					},
 					{
+						"internalType": "string",
+						"name": "imageLink",
+						"type": "string"
+					},
+					{
 						"internalType": "uint256",
 						"name": "timestamp",
 						"type": "uint256"
@@ -191,7 +238,7 @@
 						"type": "address[]"
 					}
 				],
-				"internalType": "struct bitPuenContract.Post[]",
+				"internalType": "struct bitPuenContractv2.Post[]",
 				"name": "",
 				"type": "tuple[]"
 			}
@@ -227,6 +274,11 @@
 						"type": "string"
 					},
 					{
+						"internalType": "string",
+						"name": "imageLink",
+						"type": "string"
+					},
+					{
 						"internalType": "uint256",
 						"name": "timestamp",
 						"type": "uint256"
@@ -242,7 +294,7 @@
 						"type": "address[]"
 					}
 				],
-				"internalType": "struct bitPuenContract.Post",
+				"internalType": "struct bitPuenContractv2.Post",
 				"name": "",
 				"type": "tuple"
 			}
@@ -294,6 +346,11 @@
 				"type": "string"
 			},
 			{
+				"internalType": "string",
+				"name": "imageLink",
+				"type": "string"
+			},
+			{
 				"internalType": "uint256",
 				"name": "timestamp",
 				"type": "uint256"
@@ -323,6 +380,25 @@
 		"name": "upVote",
 		"outputs": [],
 		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "users",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	}
 ]

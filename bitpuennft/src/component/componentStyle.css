@@ -2,8 +2,10 @@
     --ColorA: rgb(251, 253, 226);
     --ColorB: #fae2a6;
     --ColorC: #e5e6ee;
-    --ColorD: #4e5758;
+    --ColorD: #d38e4a;
     --ColorE: #343F3E;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadowH: rgba(0, 0, 0, 0.5);
 
 }
 
@@ -22,18 +24,29 @@
     display: flex;
     align-items: center;
     background-color: var(--ColorC);
+    box-shadow: 0 0 12px var(--shadow);
+    transition: box-shadow 0.3s ease;
+}
+.posterContainer:hover{
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 }
 .PostDisplayerContainer{
-    display: flex;
+    display: grid;
 }
 .PostCardContainer{
     padding:1%;
     margin: 1%;
     border-radius:12px;
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--ColorC);
+    box-shadow: 0 0 12px var(--shadow);
+    transition: box-shadow 0.3s ease;
+}
+.PostCardContainer:hover {
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 }
 .label{
     color:  black;
@@ -45,7 +58,7 @@
 .contentText{
     color:  black;
     padding-left: 2%;
-    font-size: 16x;
+    font-size: 12px;
     font-weight: 100;
 }
 .errText{
@@ -84,36 +97,43 @@
 
 .input {
     padding: 2%;
-    margin: 2%;
+    margin: 1%;
     border-radius: 12px;
     border: 2px;
 }
 .button {
-    padding: 2%;
-    margin:2%;
+    padding: 8px;
+    margin:12px;
     background-color: var(--ColorB);
     color: black;
     border: none;
     border-radius: 2cqb;
     cursor: pointer;
-    font-weight:100;
+    font-weight:bold;
     float:right;
     font-size: 12px;
+    box-shadow: 0 0 12px var(--shadow);
+    transition: box-shadow 0.3s ease;
 }
 .button:hover{
     background-color:var(--ColorD);
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 }
 
-
 .postInfo{
-    background-color: var(--ColorD);
+    background-color: var(--ColorE);
     border-radius: 12px;
-    margin:2%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding:2%;
 }
 
-.voteDisplay{
-    color:white;
-    padding: 2%;
+.postImage{
+    border-radius: 2cqb;
+    width: 80%;
     
+}
+.voteLabel{
+    color:white;
 }
